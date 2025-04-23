@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberCat Links</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="toggle-container">
+    <button id="toggleMode">☀️ / 🌙</button>
+  </div>
+
+  <div class="container">
+    <img src="https://i.imgur.com/tX4e0eC.png" alt="CyberCat" class="avatar" />
+    <h1>@cyber.cat.daily</h1>
+    <p>Bienvenue sur ma page de liens</p>
+
+    <div class="links">
+      <a href="https://cybercat.dev" target="_blank">Portfolio</a>
+      <a href="https://instagram.com/cybercat" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@cybercat" target="_blank">TikTok</a>
+      <a href="https://opensea.io/cybercat" target="_blank">NFT Gallery</a>
+      <a href="mailto:cybercat@protonmail.com">Contact Email</a>
+    </div>
+
+    <canvas id="qrCanvas"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+  <script>
+    const toggle = document.getElementById('toggleMode');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+    });
+
+    const qr = new QRious({
+      element: document.getElementById('qrCanvas'),
+      value: "https://cybercat.dev",
+      size: 140,
+      background: "transparent",
+      foreground: "#00ffaa"
+    });
+  </script>
+</body>
+</html>
